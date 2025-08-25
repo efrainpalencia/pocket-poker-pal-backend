@@ -1,3 +1,8 @@
+# keep the wrapper!
+!.mvn/
+!mvnw
+!mvnw.cmd
+
 # 🔐 Environment and secrets
 .env
 .env.*
