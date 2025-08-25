@@ -1,11 +1,12 @@
-# Builder stage
 FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /app
 COPY . .
-RUN chmod +x mvnw && ./mvnw clean package -DskipTests
+# Debug wrapper presence:
+RUN ls -la .mvn/wrapper && ls -la mvnw || true
+RUN chmod +x mvnw && ./mvnw -B -DskipTests clean package
 
-# Final runtime stage
-FROM eclipse-temurin:21-jdk
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
-CMD ["java", "-jar", "app.jar"]
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/app/app.jar"]

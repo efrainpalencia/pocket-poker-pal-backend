@@ -1,7 +1,14 @@
-# keep the wrapper!
 !.mvn/
+!.mvn/wrapper/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
 !mvnw
 !mvnw.cmd
+
+# Docker
+Dockerfile
+docker-compose.yml
+.idea
 
 # 🔐 Environment and secrets
 .env
@@ -17,7 +24,6 @@ out/
 .idea/
 .vscode/
 .gradle/
-.mvn/
 
 # 🗑️ OS junk
 .DS_Store
@@ -28,6 +34,7 @@ Thumbs.db
 .gitignore
 
 # 📦 Node (if frontend is in same repo)
+node_modules
 node_modules/
 npm-debug.log
 yarn.lock

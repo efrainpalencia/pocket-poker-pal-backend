@@ -29,7 +29,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-@PropertySource("classpath:env.properties")
+//@PropertySource("classpath:env.properties")
 public class AuthController {
 
     private final JwtService jwtService;
